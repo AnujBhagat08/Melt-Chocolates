@@ -1,25 +1,19 @@
-import React from "react";
-import Header from "./components/Header";
-import Hero from "./sections/Hero";
-import Taste from "./sections/Taste";
-import Quality from "./sections/Quality";
-import Parallax from "./sections/Parallax";
-import Footer from "./components/Footer";
-import SmoothScroll from "./SmoothScroll";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import OurStory from "./pages/OurStory";
+import HowItsMade from "./pages/HowItsMade";
+import Gift from "./pages/Gift";
 
 const App = () => {
   return (
-    <>
-      <SmoothScroll>
-        <Header />
-        <Hero />
-        <Taste />
-        <Quality />
-        <Parallax />
-        <Footer />
-      </SmoothScroll>
-      
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/our-story" element={<OurStory />} />
+        <Route path="/how-its-made" element={<HowItsMade />} />
+        <Route path="/gift" element={<Gift />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
