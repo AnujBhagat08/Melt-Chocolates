@@ -1,16 +1,118 @@
-# React + Vite
+# 🍫 Melt – Pure Chocolate Indulgence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-Frontend-blue)](https://reactjs.org)
+[![Vite](https://img.shields.io/badge/Vite-Build-yellow)](https://vitejs.dev)
+[![GSAP](https://img.shields.io/badge/GSAP-Animations-green)](https://greensock.com)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-teal)](https://tailwindcss.com)
 
-Currently, two official plugins are available:
+**Melt** is a premium, animation-driven chocolate brand website crafted to deliver a smooth and immersive user experience.  
+This project focuses on cinematic storytelling, luxury UI design, and high-performance frontend development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎬 Immersive GSAP animations using ScrollTrigger
+- 🖱️ Smooth hover-based flavor interactions
+- 📜 Scroll-driven storytelling sections
+- 🎨 Modern luxury UI with clean layout structure
+- ⚡ Fast performance powered by Vite
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React.js  
+- Vite  
+- Tailwind CSS  
+- GSAP (GreenSock Animation Platform)  
+- React Router  
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm 
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/melt-chocolates.git
+````
+
+Navigate to the project folder:
+
+```bash
+cd melt-chocolates
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be live at:
+
+```
+https://meltchocolate.netlify.app/
+```
+
+---
+
+## 🎯 Purpose of This Project
+
+This project was built to:
+
+* Practice advanced GSAP animation techniques
+* Improve storytelling through UI motion
+* Create a portfolio-ready premium frontend experience
+
+---
+
+## 📸 Preview
+
+ 1. Hero animation
+ <img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/98046b36-0062-4cd1-8cf1-6fb669895955" />
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 2. Our Story / About 
+ <img width="1898" height="869" alt="image" src="https://github.com/user-attachments/assets/a98c1c3f-971e-4286-b03e-3045653d26b3" />
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+ 3. How It's Made
+ <img width="1902" height="865" alt="image" src="https://github.com/user-attachments/assets/497dfd48-cc0d-4734-8b60-2db3240d397d" />
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+ 4. Gifting Section
+ <img width="1897" height="869" alt="image" src="https://github.com/user-attachments/assets/21a5d455-f7c8-4c4a-8fd6-aaaccb3f5dfe" />
+
+
+
+---
+
+## 👤 Developer
+
+- Anuj Bhagat
+- GitHub: AnujBhagat08
+- Project: Melt Chocolate
+
+---
+
+Crafted with passion & motion 🍫✨
+Melt – Where chocolate meets storytelling.
+
