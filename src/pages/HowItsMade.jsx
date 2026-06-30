@@ -107,7 +107,7 @@ const HowItMade = () => {
       {/* Changed background to Beige and text to Deep Brown */}
       <main className="bg-[#F5F5DC] text-[#3d2b1f] selection:bg-orange selection:text-white">
         {/* CINEMATIC HERO */}
-        <section className="h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+        <section className="h-screen flex flex-col items-center justify-center text-center overflow-hidden max-md:px-6 max-md:h-auto max-md:py-16">
           <div className="overflow-hidden">
             <h1 className="hero-line text-[12vw] font-black uppercase leading-none tracking-tighter text-[#3d2b1f]">
               Creation
@@ -133,7 +133,7 @@ const HowItMade = () => {
               </h2>
             </div>
 
-            <div className="max-w-7xl mx-auto w-full px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
+            <div className="max-w-7xl mx-auto w-full px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10 max-md:px-4 max-md:gap-6">
               {/* CONTENT SIDE */}
               <div className="process-text order-2 md:order-1 space-y-6">
                 <span className="text-orange font-bold text-xl md:text-2xl tracking-[10px] block uppercase">
@@ -154,7 +154,7 @@ const HowItMade = () => {
                   <div className="absolute inset-0 bg-orange/5 blur-[100px] rounded-full scale-125 transition-all duration-700 group-hover:bg-orange/15"></div>
                   <img
                     src={step.img}
-                    className="process-img w-75 md:w-120 drop-shadow-[0_30px_60px_rgba(61,43,31,0.2)] will-change-transform transform hover:scale-105 transition-transform duration-1000"
+                    className="process-img w-75 md:w-120 max-md:w-[60vw] drop-shadow-[0_30px_60px_rgba(61,43,31,0.2)] will-change-transform transform hover:scale-105 transition-transform duration-1000"
                     alt={step.title}
                   />
                 </div>

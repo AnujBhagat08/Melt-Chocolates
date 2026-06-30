@@ -3,7 +3,7 @@ import meltVideo from "../assets/video/melt-video.mp4";
 
 const Parallax = () => {
   return (
-    <section className="inner-container h-screen py-20 ">
+    <section className="inner-container h-screen py-20 max-md:h-auto max-md:py-10 ">
       {/* 1. यह वो मुख्य 'खिड़की' (Container) है जिसके अंदर वीडियो दिखेगा */}
       <div
         className="h-full w-full rounded-xl overflow-hidden relative"
@@ -25,7 +25,7 @@ const Parallax = () => {
 
         {/* Content on top of the video */}
         <div className="relative z-10 flex h-full items-center justify-center">
-          <h1 className="text-white text-7xl font-bold uppercase text-center px-4">
+          <h1 className="text-white text-7xl font-bold uppercase text-center px-4 max-md:text-4xl">
             <span className="text-4xl "> Four Flavors, One Perfect Melt</span>{" "}
             <br />
             <span className="tracking-tighter"> Experience the Melt </span>

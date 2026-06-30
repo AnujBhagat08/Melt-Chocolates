@@ -88,7 +88,7 @@ const StoryPage = () => {
       <Header />
       <main className="bg-beige  overflow-hidden">
         {/* HERO SECTION: The Grand Entrance */}
-        <section className="hero-section h-50% flex flex-col items-center justify-center relative">
+        <section className="hero-section h-50% flex flex-col items-center justify-center relative max-md:px-6 max-md:h-auto">
           <h1 className="hero-title text-[12vw] font-black leading-none uppercase flex overflow-hidden">
             {"PURE".split("").map((char, i) => (
               <span key={i} className="inline-block">
@@ -98,7 +98,7 @@ const StoryPage = () => {
           </h1>
           <img
             src={Caramel}
-            className="hero-image w-75 z-10 drop-shadow-[0_0_50px_rgba(255,150,50,0.3)]"
+            className="hero-image w-75 z-10 drop-shadow-[0_0_50px_rgba(255,150,50,0.3)] max-md:w-[50vw]"
             alt=""
           />
           <h2 className="text-2xl tracking-[15px] uppercase mt-5 font-light opacity-60">
@@ -107,12 +107,12 @@ const StoryPage = () => {
         </section>
 
         {/* ORIGIN SECTION: Parallax Storytelling */}
-        <section className="story-origin relative py-40 px-10">
-          <div className="parallax-bg absolute top-0 right-0 opacity-50 pointer-events-none">
-            <img src={Cocoa} className="w-125" alt="" />
+        <section className="story-origin relative py-40 px-10 max-md:px-4 max-md:py-20">
+          <div className="parallax-bg absolute top-0 right-0 opacity-50 pointer-events-none max-md:relative max-md:top-auto max-md:right-auto max-md:mx-auto max-md:w-full max-md:flex max-md:justify-center">
+            <img src={Cocoa} className="w-125 max-md:w-[75vw]" alt="" />
           </div>
 
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center max-md:gap-10">
             <div className="z-10">
               <span className="text-orange font-mono tracking-widest block mb-4 uppercase">
                 The Genesis
@@ -133,17 +133,21 @@ const StoryPage = () => {
         </section>
 
         {/* PIN SECTION: The "Craft" Gallery */}
-        <section className="pin-section h-screen flex flex-col items-center justify-center bg-beige ">
-          <h3 className="text-4xl font-light uppercase tracking-widest mb-20 opacity-30">
+        <section className="pin-section h-screen flex flex-col items-center justify-center bg-beige max-md:h-auto max-md:py-20">
+          <h3 className="text-4xl font-light uppercase tracking-widest mb-20 opacity-30 max-md:text-3xl">
             The Artisan Palette
           </h3>
-          <div className="flex gap-10">
+          <div className="flex gap-10 max-md:flex-col max-md:gap-6">
             {[Almond, Cocoa, Orange, Caramel].map((img, i) => (
               <div
                 key={i}
-                className="pin-card bg-beige p-8 rounded-xl border border-white/5 hover:border-black/50 transition-colors duration-500"
+                className="pin-card bg-beige p-8 rounded-xl border border-white/5 hover:border-black/50 transition-colors duration-500 max-md:w-full"
               >
-                <img src={img} className="w-64 drop-shadow-2xl" alt="Product" />
+                <img
+                  src={img}
+                  className="w-64 max-md:w-full drop-shadow-2xl"
+                  alt="Product"
+                />
                 <h4 className="text-center mt-6 text-xl font-bold tracking-widest uppercase">
                   Blend {i + 1}
                 </h4>
@@ -162,10 +166,10 @@ const StoryPage = () => {
               alt="Melt Seal"
             />
           </div>
-          <h2 className="text-6xl text-brown font-black mt-16 tracking-tighter uppercase">
+          <h2 className="text-6xl text-brown font-black mt-16 tracking-tighter uppercase max-md:text-4xl">
             This is Melt.
           </h2>
-          <p className="text-2xl font-light italic text-black mt-4">
+          <p className="text-2xl font-light italic text-black mt-4 max-md:text-xl">
             Crafted for the few who know the difference.
           </p>
         </section>

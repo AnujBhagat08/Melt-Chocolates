@@ -16,7 +16,7 @@ const Header = () => {
   });
 
   return (
-    <header className="sticky top-0 z-20 flex items-stretch justify-between gap-5 max-w-7xl m-auto p-6">
+    <header className="sticky top-0 z-20 flex items-stretch justify-between gap-5 max-w-7xl m-auto p-6 max-md:flex-col max-md:items-stretch max-md:p-4">
       <div className="flex items-center justify-between bg-white rounded-xl w-full px-4 py-3">
         {/* Logo */}
         <Link to="/">
@@ -25,7 +25,7 @@ const Header = () => {
 
         {/* Navigation */}
         <nav>
-          <ul className="flex items-center gap-9 font-medium tracking-tight">
+          <ul className="flex items-center gap-9 font-medium tracking-tight max-md:flex-wrap max-md:justify-center max-md:gap-4">
             <li>
               <Link to="/">Flavors</Link>
             </li>

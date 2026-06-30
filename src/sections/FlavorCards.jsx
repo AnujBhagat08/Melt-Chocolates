@@ -1,11 +1,11 @@
 import React from "react";
 
-const FlavorCards = ({setActiveFlavor}) => {
+const FlavorCards = ({ setActiveFlavor }) => {
   return (
     <>
-      <div className="grid grid-cols-4 gap-5 items-end pb-30 h-screen">
+      <div className="grid grid-cols-4 gap-5 items-end pb-30 h-screen max-lg:grid-cols-2 max-md:grid-cols-1 max-md:h-auto max-md:pb-16">
         <div
-          className="relative group card caremel-card bg-orange w-full h-[40vh] rounded-xl origin-top transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8"
+          className="relative group card caremel-card bg-orange w-full h-[40vh] rounded-xl origin-top transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8 max-md:h-[30vh]"
           onMouseEnter={() => setActiveFlavor("caramel")}
           onMouseLeave={() => setActiveFlavor(null)}
         >
@@ -21,7 +21,7 @@ const FlavorCards = ({setActiveFlavor}) => {
           </p>
         </div>
         <div
-          className="relative group card cocoa-card bg-blue w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8"
+          className="relative group card cocoa-card bg-blue w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8 max-md:h-[30vh]"
           onMouseEnter={() => setActiveFlavor("cocoa")}
           onMouseLeave={() => setActiveFlavor(null)}
         >
@@ -36,7 +36,7 @@ const FlavorCards = ({setActiveFlavor}) => {
           </p>
         </div>
         <div
-          className="relative group card orange-card bg-yellow w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8"
+          className="relative group card orange-card bg-yellow w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8 max-md:h-[30vh]"
           onMouseEnter={() => setActiveFlavor("orange")}
           onMouseLeave={() => setActiveFlavor(null)}
         >
@@ -52,7 +52,7 @@ const FlavorCards = ({setActiveFlavor}) => {
           </p>
         </div>
         <div
-          className="relative group card almond-card bg-green w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8"
+          className="relative group card almond-card bg-green w-full h-[40vh] rounded-xl origin-top     transform transition-transform duration-500 ease-out hover:scale-y-[1.08] flex flex-col items-center justify-end overflow-hidden pb-8 max-md:h-[30vh]"
           onMouseEnter={() => setActiveFlavor("almond")}
           onMouseLeave={() => setActiveFlavor(null)}
         >

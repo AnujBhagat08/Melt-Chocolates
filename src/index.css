@@ -29,10 +29,9 @@
 
 @layer components {
   .inner-container {
-    @apply px-28;
+    @apply px-28 max-md:px-6;
   }
   img {
     width: 100%;
   }
 }
-

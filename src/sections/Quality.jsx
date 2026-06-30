@@ -9,38 +9,41 @@ const Quality = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
-  useGSAP(() => {
-    // set initial state individually
-    cardsRef.current.forEach((card, i) => {
-      gsap.set(card, {
-        y: "180%",
-        rotate: i % 2 === 0 ? -10 : 10, // alternate rotation
+  useGSAP(
+    () => {
+      // set initial state individually
+      cardsRef.current.forEach((card, i) => {
+        gsap.set(card, {
+          y: "180%",
+          rotate: i % 2 === 0 ? -10 : 10, // alternate rotation
+        });
       });
-    });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=300%",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=300%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
 
-    tl.to(cardsRef.current, {
-      y: 0,
-      rotate: 0,
-      duration: 2,
-      stagger: 1,
-      ease: "power2.out",
-    });
-  }, { scope: sectionRef });
+      tl.to(cardsRef.current, {
+        y: 0,
+        rotate: 0,
+        duration: 2,
+        stagger: 1,
+        ease: "power2.out",
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <section ref={sectionRef} className="inner-container pt-30 pb-40">
-      <div className="grid grid-cols-12 gap-20">
+      <div className="grid grid-cols-12 gap-20 max-md:grid-cols-1 max-md:gap-10">
         {/* LEFT CONTENT */}
         <div className="col-span-7 h-full flex flex-col justify-between">
           <h2 className="max-w-175 leading-20">
@@ -49,15 +52,16 @@ const Quality = () => {
           </h2>
           <div className="max-w-115 leading-6 font-medium">
             Every bar is a result of careful sourcing, precise timing, and
-            countless taste tests — all to make sure each bite feels intentional.
+            countless taste tests — all to make sure each bite feels
+            intentional.
           </div>
         </div>
 
         {/* RIGHT CARDS */}
-        <div className="col-span-5 relative h-130">
+        <div className="col-span-5 relative h-130 max-md:col-span-12 max-md:h-auto">
           <div
             ref={(el) => (cardsRef.current[0] = el)}
-            className="card bg-blue text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between ml-auto"
+            className="card bg-blue text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between ml-auto max-md:ml-0"
           >
             <div>
               <div className="text-[7.5vw] font-semibold leading-40">200+</div>
@@ -68,7 +72,7 @@ const Quality = () => {
 
           <div
             ref={(el) => (cardsRef.current[1] = el)}
-            className="card bg-yellow text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between absolute top-16 right-0"
+            className="card bg-yellow text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between absolute top-16 right-0 max-md:static max-md:mt-8 max-md:right-auto"
           >
             <div>
               <div className="text-[7.5vw] font-semibold leading-40">30+</div>
@@ -79,7 +83,7 @@ const Quality = () => {
 
           <div
             ref={(el) => (cardsRef.current[2] = el)}
-            className="card bg-green text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between absolute top-32 right-0"
+            className="card bg-green text-white rounded-3xl max-w-115 w-full p-10 min-h-112 flex flex-col justify-between absolute top-32 right-0 max-md:static max-md:mt-8 max-md:right-auto"
           >
             <div>
               <div className="text-[7.5vw] font-semibold leading-40">100%</div>

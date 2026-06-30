@@ -132,7 +132,7 @@ const GiftPage = () => {
         />
 
         {/* HERO */}
-        <section className="h-screen flex flex-col items-center justify-center text-center relative px-6">
+        <section className="h-screen flex flex-col items-center justify-center text-center relative px-6 max-md:px-4 max-md:py-16 max-md:h-auto">
           <div className="relative z-10">
             <div className="overflow-hidden">
               <h1 className="hero-text-line text-[12vw] font-black uppercase leading-none tracking-tighter">
@@ -147,7 +147,7 @@ const GiftPage = () => {
           </div>
           <img
             src={Stamp}
-            className="hero-main-img w-87.5 md:w-137.5 absolute z-0 opacity-10 "
+            className="hero-main-img w-87.5 md:w-137.5 absolute z-0 opacity-10 max-md:w-[55vw]"
             alt=""
           />
           <p className="mt-12 text-xl md:text-2xl tracking-[0.5em] uppercase font-light opacity-60">
@@ -175,7 +175,7 @@ const GiftPage = () => {
               </div>
 
               <div
-                className={`reveal-content w-full md:w-[40%] mt-20 md:mt-0 space-y-8 z-10`}
+                className={`reveal-content w-full md:w-[40%] mt-20 md:mt-0 space-y-8 z-10 max-md:text-center`}
               >
                 <div className="flex items-center gap-4">
                   <span className="h-[1px] w-12 bg-orange"></span>
@@ -220,7 +220,7 @@ const GiftPage = () => {
             </p>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-20 py-6 bg-orange text-white text-xl font-bold uppercase tracking-[10px] hover:bg-white hover:text-[#3d2b1f] transition-all duration-500 shadow-2xl active:scale-95"
+              className="px-20 py-6 bg-orange text-white text-xl font-bold uppercase tracking-[10px] hover:bg-white hover:text-[#3d2b1f] transition-all duration-500 shadow-2xl active:scale-95 max-md:px-12 max-md:py-4"
             >
               Craft Your Note
             </button>
@@ -239,7 +239,7 @@ const GiftPage = () => {
           </h2>
           <button
             onClick={scrollToGifts}
-            className="px-24 py-8 bg-[#3d2b1f] text-white text-2xl font-bold uppercase tracking-[12px] shadow-2xl hover:bg-orange transition-all duration-700 rounded-sm"
+            className="px-24 py-8 bg-[#3d2b1f] text-white text-2xl font-bold uppercase tracking-[12px] shadow-2xl hover:bg-orange transition-all duration-700 rounded-sm max-md:px-12 max-md:py-5 max-md:text-xl"
           >
             Discover Gifts
           </button>
@@ -250,7 +250,7 @@ const GiftPage = () => {
       {/* --- PERSONALIZATION MODAL --- */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-xl p-6">
-          <div className="bg-[#F5F5DC] w-full max-w-2xl p-12 rounded-[40px] shadow-2xl relative border border-[#3d2b1f]/10 overflow-hidden">
+          <div className="bg-[#F5F5DC] w-full max-w-2xl p-12 rounded-[40px] shadow-2xl relative border border-[#3d2b1f]/10 overflow-hidden max-md:p-6">
             {/* SUCCESS OVERLAY (The Wax Seal Slam Effect) */}
             {isSaved && (
               <div className="absolute inset-0 z-50 bg-[#F5F5DC] flex flex-col items-center justify-center text-center">
@@ -327,7 +327,7 @@ const GiftPage = () => {
               </p>
               <button
                 onClick={handleSave}
-                className="w-full md:w-auto px-12 py-5 bg-[#3d2b1f] text-white font-bold uppercase tracking-widest rounded-2xl hover:bg-orange transition-all duration-500 shadow-xl"
+                className="w-full md:w-auto px-12 py-5 bg-[#3d2b1f] text-white font-bold uppercase tracking-widest rounded-2xl hover:bg-orange transition-all duration-500 shadow-xl max-md:px-6"
               >
                 Save & Seal
               </button>

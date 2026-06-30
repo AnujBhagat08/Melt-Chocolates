@@ -6,14 +6,12 @@ import Gift from "./pages/Gift";
 
 const App = () => {
   return (
-    
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/our-story" element={<OurStory />} />
-        <Route path="/how-its-made" element={<HowItsMade />} />
-        <Route path="/gift" element={<Gift />} />
-      </Routes>
-    
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/our-story" element={<OurStory />} />
+      <Route path="/how-its-made" element={<HowItsMade />} />
+      <Route path="/gift" element={<Gift />} />
+    </Routes>
   );
 };
 

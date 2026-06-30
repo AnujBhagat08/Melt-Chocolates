@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
-import Caramel from '../assets/images/bite.png'
-import Caramel1 from '../assets/images/bite-1.png'
-import Caramel2 from '../assets/images/bite-2.png'
-import Caramel3 from '../assets/images/bite-3.png'
+import React, { useRef } from "react";
+import Caramel from "../assets/images/bite.png";
+import Caramel1 from "../assets/images/bite-1.png";
+import Caramel2 from "../assets/images/bite-2.png";
+import Caramel3 from "../assets/images/bite-3.png";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,168 +12,226 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Taste = () => {
-
   const tasteRef = useRef(null);
 
-  useGSAP(() => {
-    
-    SplitText.create("h2", {
-      type: "chars",
-      onSplit(self) {
-        gsap.from(self.chars, {
-          scale: 1.3,
-          opacity: 0,
-          stagger: 0.08,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: tasteRef.current,
-            start: 'top bottom',
-            end: 'center center',
-            scrub: 1,
-          }
-        })
-      }
-    });
-
-    gsap.set(".img-1", { visibility: "visible" });
-    gsap.set(".img-2", { visibility: "hidden" });
-    gsap.set(".img-3", { visibility: "hidden" });
-    gsap.set(".img-4", { visibility: "hidden" });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: tasteRef.current,
-        start: "top top",
-        end: "+=600%",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    // Smooth (already visible)
-    // tl.from(".text-1", { opacity: 0 });
-    const split1 = new SplitText(".text-1", { type: "chars" });
-    const split2 = new SplitText(".text-2", { type: "chars" });
-    const split3 = new SplitText(".text-3", { type: "chars" });
-    const split4 = new SplitText(".text-4", { type: "chars" });
-
-    // Arrow animation
-    const arrows = gsap.utils.toArray(
-      tasteRef.current.querySelectorAll(".arrow-path")
-    );
-
-    arrows.forEach((path) => {
-      const length = path.getTotalLength();
-      gsap.set(path, {
-        strokeDasharray: length,
-        strokeDashoffset: length,
+  useGSAP(
+    () => {
+      SplitText.create("h2", {
+        type: "chars",
+        onSplit(self) {
+          gsap.from(self.chars, {
+            scale: 1.3,
+            opacity: 0,
+            stagger: 0.08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: tasteRef.current,
+              start: "top bottom",
+              end: "center center",
+              scrub: 1,
+            },
+          });
+        },
       });
-    });
 
-    tl.to(".arrow-1", {
-      strokeDashoffset: 0,
-      duration: 1.2,
-      ease: "power1.inOut",
-    });
+      gsap.set(".img-1", { visibility: "visible" });
+      gsap.set(".img-2", { visibility: "hidden" });
+      gsap.set(".img-3", { visibility: "hidden" });
+      gsap.set(".img-4", { visibility: "hidden" });
 
-    tl.to(".arrow-1", {
-      fill: "#0D1927",
-      duration: 0.2,
-    }, "<+=0.4");
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: tasteRef.current,
+          start: "top top",
+          end: "+=600%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
 
-    tl.from(split1.chars, {
-      visibility: "hidden",
-      stagger: {
-        each: 0.08,
-        ease: "power1.out",
-      },
-      duration: 0.6,
-    }, "<+=0.1");
+      // Smooth (already visible)
+      // tl.from(".text-1", { opacity: 0 });
+      const split1 = new SplitText(".text-1", { type: "chars" });
+      const split2 = new SplitText(".text-2", { type: "chars" });
+      const split3 = new SplitText(".text-3", { type: "chars" });
+      const split4 = new SplitText(".text-4", { type: "chars" });
 
-    // Crunchy
-    tl.to(".img-1", { visibility: "hidden" });
-    tl.to(".img-2", { visibility: "visible" }, "<");
+      // Arrow animation
+      const arrows = gsap.utils.toArray(
+        tasteRef.current.querySelectorAll(".arrow-path"),
+      );
 
-    tl.to(".arrow-2", {
-      strokeDashoffset: 0,
-      duration: 1.2,
-      ease: "power1.inOut",
-    }, "<+=0.3");
+      arrows.forEach((path) => {
+        const length = path.getTotalLength();
+        gsap.set(path, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+        });
+      });
 
-    tl.to(".arrow-2", {
-      fill: "#0D1927",
-      duration: 0.2,
-    }, "<+=0.4");
+      tl.to(".arrow-1", {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        ease: "power1.inOut",
+      });
 
-    tl.from(split2.chars, {
-      visibility: "hidden",
-      stagger: {
-        each: 0.08,
-        ease: "power1.out",
-      },
-      duration: 0.6,
-    }, "<+=0.1");
+      tl.to(
+        ".arrow-1",
+        {
+          fill: "#0D1927",
+          duration: 0.2,
+        },
+        "<+=0.4",
+      );
 
-    // Satisfying
-    tl.to(".img-2", { visibility: "hidden" });
-    tl.to(".img-3", { visibility: "visible" }, "<");
+      tl.from(
+        split1.chars,
+        {
+          visibility: "hidden",
+          stagger: {
+            each: 0.08,
+            ease: "power1.out",
+          },
+          duration: 0.6,
+        },
+        "<+=0.1",
+      );
 
-    tl.to(".arrow-3", {
-      strokeDashoffset: 0,
-      duration: 1.2,
-      ease: "power1.inOut",
-    }, "<+=0.3");
+      // Crunchy
+      tl.to(".img-1", { visibility: "hidden" });
+      tl.to(".img-2", { visibility: "visible" }, "<");
 
-    tl.to(".arrow-3", {
-      fill: "#0D1927",
-      duration: 0.2,
-    }, "<+=0.4");
+      tl.to(
+        ".arrow-2",
+        {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          ease: "power1.inOut",
+        },
+        "<+=0.3",
+      );
 
-    tl.from(split3.chars, {
-      visibility: "hidden",
-      stagger: {
-        each: 0.08,
-        ease: "power1.out",
-      },
-      duration: 0.6,
-    }, "<+=0.1");
+      tl.to(
+        ".arrow-2",
+        {
+          fill: "#0D1927",
+          duration: 0.2,
+        },
+        "<+=0.4",
+      );
 
-    // Balanced
-    tl.to(".img-3", { visibility: "hidden" });
-    tl.to(".img-4", { visibility: "visible" }, "<");
+      tl.from(
+        split2.chars,
+        {
+          visibility: "hidden",
+          stagger: {
+            each: 0.08,
+            ease: "power1.out",
+          },
+          duration: 0.6,
+        },
+        "<+=0.1",
+      );
 
-    tl.to(".arrow-4", {
-      strokeDashoffset: 0,
-      duration: 1.2,
-      ease: "power1.inOut",
-    }, "<+=0.3");
+      // Satisfying
+      tl.to(".img-2", { visibility: "hidden" });
+      tl.to(".img-3", { visibility: "visible" }, "<");
 
-    tl.to(".arrow-4", {
-      fill: "#0D1927",
-      duration: 0.2,
-    }, "<+=0.4");
+      tl.to(
+        ".arrow-3",
+        {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          ease: "power1.inOut",
+        },
+        "<+=0.3",
+      );
 
-    tl.from(split4.chars, {
-      visibility: "hidden",
-      stagger: {
-        each: 0.08,
-        ease: "power1.out",
-      },
-      duration: 0.6,
-    }, "<+=0.1");
-    
-  }, {scope: tasteRef})
+      tl.to(
+        ".arrow-3",
+        {
+          fill: "#0D1927",
+          duration: 0.2,
+        },
+        "<+=0.4",
+      );
+
+      tl.from(
+        split3.chars,
+        {
+          visibility: "hidden",
+          stagger: {
+            each: 0.08,
+            ease: "power1.out",
+          },
+          duration: 0.6,
+        },
+        "<+=0.1",
+      );
+
+      // Balanced
+      tl.to(".img-3", { visibility: "hidden" });
+      tl.to(".img-4", { visibility: "visible" }, "<");
+
+      tl.to(
+        ".arrow-4",
+        {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          ease: "power1.inOut",
+        },
+        "<+=0.3",
+      );
+
+      tl.to(
+        ".arrow-4",
+        {
+          fill: "#0D1927",
+          duration: 0.2,
+        },
+        "<+=0.4",
+      );
+
+      tl.from(
+        split4.chars,
+        {
+          visibility: "hidden",
+          stagger: {
+            each: 0.08,
+            ease: "power1.out",
+          },
+          duration: 0.6,
+        },
+        "<+=0.1",
+      );
+    },
+    { scope: tasteRef },
+  );
 
   return (
-    <section ref={tasteRef} className='text-center h-screen pt-8 pb-20'>
+    <section
+      ref={tasteRef}
+      className="text-center h-screen pt-8 pb-20 max-md:h-auto max-md:pt-12 max-md:pb-28"
+    >
       <h2>Feel the Melt</h2>
-      <div className='flex justify-center items-center h-full relative'>
-        <div className="relative">
-          <img src={Caramel} alt="Caramel" className='img-1 max-w-68 transform rotate-55 z-1' />
-          <div className='absolute top-50 -right-100 flex items-end gap-4'>
-            <svg width="118" height="39" viewBox="0 0 118 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path className="arrow-path arrow-1"
+      <div className="flex justify-center items-center h-full relative max-md:flex-col max-md:gap-10 max-md:px-6">
+        <div className="relative max-md:w-full max-md:mx-auto">
+          <img
+            src={Caramel}
+            alt="Caramel"
+            className="img-1 max-w-68 max-md:max-w-[55vw] transform rotate-55 z-1"
+          />
+          <div className="absolute top-50 -right-100 flex items-end gap-4 max-md:static max-md:flex-col max-md:items-center max-md:gap-2 max-md:mt-6">
+            <svg
+              width="118"
+              height="39"
+              viewBox="0 0 118 39"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="arrow-path arrow-1"
                 d="M0.5 11.2
                   C6.6 21 34.5 32.1 54 32.6
                   C75.1 33.3 86.9 29.8 110.3 16
@@ -198,15 +256,31 @@ const Taste = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className='taste-text text-1 font-accent font-bold tracking-tight text-[40px] pb-5'>Smooth</span>
+            <span className="taste-text text-1 font-accent font-bold tracking-tight text-[40px] pb-5">
+              Smooth
+            </span>
           </div>
         </div>
-        <div className=" absolute z-0">
-          <img src={Caramel1} alt="Caramel" className='img-2 max-w-68 transform rotate-55' />
-          <div className='absolute top-10 -left-35 flex items-end gap-8'>
-            <span className='taste-text text-2 font-accent font-bold tracking-tight text-[40px]'>Crunchy</span>
-            <svg width="118" height="39" className='rotate-195' viewBox="0 0 118 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path className="arrow-path arrow-2"
+        <div className=" absolute z-0 max-md:static max-md:mt-6 max-md:mx-auto">
+          <img
+            src={Caramel1}
+            alt="Caramel"
+            className="img-2 max-w-68 max-md:max-w-[55vw] transform rotate-55"
+          />
+          <div className="absolute top-10 -left-35 flex items-end gap-8 max-md:static max-md:flex-col max-md:items-center max-md:gap-2 max-md:mt-6">
+            <span className="taste-text text-2 font-accent font-bold tracking-tight text-[40px] max-md:text-3xl">
+              Crunchy
+            </span>
+            <svg
+              width="118"
+              height="39"
+              className="rotate-195"
+              viewBox="0 0 118 39"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="arrow-path arrow-2"
                 d="M0.5 11.2
                   C6.6 21 34.5 32.1 54 32.6
                   C75.1 33.3 86.9 29.8 110.3 16
@@ -233,11 +307,22 @@ const Taste = () => {
             </svg>
           </div>
         </div>
-        <div className="absolute -z-1">
-          <img src={Caramel2} alt="Caramel" className='img-3 max-w-68 transform rotate-55' />
-          <div className='absolute top-112 left-25 flex items-start gap-3'>
-            <svg width="113" height="84" viewBox="0 0 113 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path className="arrow-path arrow-3"
+        <div className="absolute -z-1 max-md:static max-md:mt-6 max-md:mx-auto">
+          <img
+            src={Caramel2}
+            alt="Caramel"
+            className="img-3 max-w-68 max-md:max-w-[55vw] transform rotate-55"
+          />
+          <div className="absolute top-112 left-25 flex items-start gap-3 max-md:static max-md:flex-col max-md:items-center max-md:gap-2 max-md:mt-6">
+            <svg
+              width="113"
+              height="84"
+              viewBox="0 0 113 84"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="arrow-path arrow-3"
                 d="M0 23.5
                   C9.8 17.3 40.1 19.9 57.9 28
                   C77.1 36.7 86.2 45 101.1 67.7
@@ -262,15 +347,31 @@ const Taste = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className='taste-text text-3 font-accent font-bold tracking-tight text-[40px] pt-16 whitespace-nowrap'>Satisfying</span>
+            <span className="taste-text text-3 font-accent font-bold tracking-tight text-[40px] pt-16 whitespace-nowrap max-md:text-3xl">
+              Satisfying
+            </span>
           </div>
         </div>
-        <div className="absolute -z-2">
-          <img src={Caramel3} alt="Caramel" className='img-4 max-w-68 transform rotate-55' />
-          <div className='absolute top-86 -left-105 flex items-end gap-8'>
-            <span className='taste-text text-4 font-accent font-bold tracking-tight text-[40px] pb-6'>Balanced</span>
-            <svg width="113" height="84" className='rotate-150' viewBox="0 0 113 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path className="arrow-path arrow-4"
+        <div className="absolute -z-2 max-md:static max-md:mt-6 max-md:mx-auto">
+          <img
+            src={Caramel3}
+            alt="Caramel"
+            className="img-4 max-w-68 max-md:max-w-[55vw] transform rotate-55"
+          />
+          <div className="absolute top-86 -left-105 flex items-end gap-8 max-md:static max-md:flex-col max-md:items-center max-md:gap-2 max-md:mt-6">
+            <span className="taste-text text-4 font-accent font-bold tracking-tight text-[40px] pb-6 max-md:text-3xl">
+              Balanced
+            </span>
+            <svg
+              width="113"
+              height="84"
+              className="rotate-150"
+              viewBox="0 0 113 84"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="arrow-path arrow-4"
                 d="M0 23.5
                   C9.8 17.3 40.1 19.9 57.9 28
                   C77.1 36.7 86.2 45 101.1 67.7
@@ -299,7 +400,7 @@ const Taste = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Taste
+export default Taste;

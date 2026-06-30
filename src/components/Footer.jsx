@@ -64,10 +64,10 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-orange text-white px-10 md:px-20 overflow-hidden"
+      className="bg-orange text-white px-10 md:px-20 overflow-hidden max-md:px-6"
     >
       {/* MAIN CONTENT GRID */}
-      <div className="pt-24 grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-white/10 pb-20">
+      <div className="pt-24 grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-white/10 pb-20 max-md:gap-8">
         {/* BRAND TAGLINE */}
         <div className="footer-fade col-span-12 md:col-span-8">
           <h2 className="text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter">
@@ -141,7 +141,7 @@ const Footer = () => {
       </div>
 
       {/* SOCIALS & NEWSLETTER ROW */}
-      <div className="flex flex-col lg:flex-row justify-between items-center py-16 gap-10 footer-fade">
+      <div className="flex flex-col lg:flex-row justify-between items-center py-16 gap-10 footer-fade max-md:gap-6">
         {/* SOCIAL ICONS (Polished Circles) */}
         <div className="flex gap-3">
           <a
@@ -232,7 +232,7 @@ const Footer = () => {
             MELT
           </span>
         </div>
-        <div className="flex gap-8 mt-4 md:md:mt-0">
+        <div className="flex gap-8 mt-4 md:mt-0 max-md:flex-col max-md:items-center max-md:gap-4">
           <a
             href=""
             className="hover:text-brown transition-colors duration-300"
