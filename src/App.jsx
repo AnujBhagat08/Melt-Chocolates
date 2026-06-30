@@ -6,7 +6,7 @@ import Gift from "./pages/Gift";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/our-story" element={<OurStory />} />
